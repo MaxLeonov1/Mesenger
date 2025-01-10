@@ -1,0 +1,29 @@
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+<p class="{{ category }}" style="position: fixed; top: 10px; left: 10px;">{{ message }}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+
+
+{% for post in posts %}
+
+<p>
+<article><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <h1>{{post[1]}}</h1></article>
+<article><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <img src="/static/upload/{{post[2]}}"></article>
+<article><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    Описание: {{post[3]}}</article>
+</p>
+{% endfor %}
+
+</body>
+</html>

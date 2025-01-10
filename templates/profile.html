@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль пользователя</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100vh;
+    }
+    .profile-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        text-align: left;
+        width: 400px;
+        margin-bottom: 20px;
+    }
+    .profile-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .profile-header img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+    .profile-header h2 {
+        margin: 0;
+        font-size: 24px;
+    }
+    .profile-details p {
+        margin: 5px 0;
+        color: #777;
+    }
+    .profile-details .label {
+        font-weight: bold;
+        color: #333;
+    }
+    .button-container {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    .button-container a, .button-container button {
+        text-decoration: none;
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+    }
+    .button-container a:hover, .button-container button:hover {
+        background-color: #0056b3;
+    }
+</style>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="profile-photo.jpg" alt="Фото профиля">
+            <h2>Имя пользователя</h2>
+        </div>
+        <div class="profile-details">
+            <p><span class="label">О пользователе:</span> Информация о пользователе</p>
+            <p><span class="label">Email:</span> user@example.com</p>
+            <p><span class="label">Телефон:</span> +1234567890</p>
+        </div>
+    </div>
+    <div class="button-container">
+        <a href="/">Вернуться на главную страницу</a>
+        <a href="/user_profile_change/">Изменить информацию о себе</a>
+
+    </div>
+</body>
+</html>

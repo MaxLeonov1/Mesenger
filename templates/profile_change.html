@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактировать профиль пользователя</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            height: 100vh;
+        }
+        .profile-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            text-align: left;
+            width: 400px;
+            margin-bottom: 20px;
+        }
+        .button-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .button-container a, .button-container button {
+            text-decoration: none;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .button-container a:hover, .button-container button:hover {
+            background-color: #0056b3;
+        }
+        .edit-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .edit-form label {
+            margin: 10px 0 5px;
+        }
+        .edit-form input[type="text"],
+        .edit-form input[type="file"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .edit-form input[type="submit"] {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .edit-form input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <form class="edit-form" action="/save_user_profile/" method="POST">
+        <label for="profile-photo">Изменить фото:</label>
+        <input type="file" id="profile-photo" name="profile-photo" accept="image/*" required>
+
+        <label for="about">О пользователе:</label>
+        <input type="text" id="about" name="about" required>
+
+        <input type="submit" value="Сохранить изменения">
+    </form>
+</body>
+</html>
+

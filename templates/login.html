@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <title>Форма авторизации</title>
+    <style>
+        .success{color:green;}
+        .danger{color:red;}
+    </style>
+</head>
+<body>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+<p class="{{ category }}" style="position: fixed; top: 10px; left: 10px;">{{ message }}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<h2>Авторизация</h2>
+<form action="/authorization/" method="post">
+    <!-- Поля для ввода логина -->
+    <label for="username">Логин:</label>
+    <input type="text" id="username" name="username" required><br><br>
+
+    <!-- Поля для ввода пароля -->
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <!-- Кнопка отправки формы -->
+    <input type="submit" value="Войти">
+</form>
+</body>
+</html>
